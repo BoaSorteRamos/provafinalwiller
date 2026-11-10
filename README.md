@@ -26,10 +26,22 @@ npm install
 ### 3. Criar o arquivo `.env`
 O `.env` **não vai para o GitHub** (tem senhas), então precisa ser criado:
 
-1. Copie o `.env.example` com o nome `.env`
-   - PowerShell: `Copy-Item .env.example .env`
-   - Prompt (cmd): `copy .env.example .env`
-2. Abra o `.env` e confira/ajuste:
+1. Na raiz do projeto (ao lado do `package.json`), crie um arquivo chamado `.env` com este conteúdo:
+   ```
+   PORT=3000
+   JWT_SECRET=troque-por-um-texto-grande-e-aleatorio
+   LIMITE_POR_MINUTO=120
+   NODE_ENV=development
+
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=senai
+   DB_NAME=provaSaep
+
+   CORS_ORIGIN=http://localhost:5500,http://localhost:5173,http://localhost:3001
+   ```
+2. Confira/ajuste os valores:
 
 | Variável | O que é |
 |---|---|
@@ -183,5 +195,4 @@ O terminal onde a API roda mostra o erro real de cada falha.
 - `server.js`: rotas, validações e segurança
 - `db.js`: conexão com o PostgreSQL
 - `sql.sql`: tabelas e dados de exemplo
-- `.env.example`: modelo do `.env`
 - `package.json`: dependências e scripts
